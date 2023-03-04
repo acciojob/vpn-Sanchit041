@@ -23,7 +23,7 @@ public class ConnectionServiceImpl implements ConnectionService {
     @Override
     public User connect(int userId, String countryName) throws Exception{
 //        Optional<User> list  = ;
-        User user = userRepository2.findById(userId);
+        User user = userRepository2.findById(userId).get();
 
         if(user.getMaskedIp()!=null)
             throw new Exception("Already connected");
